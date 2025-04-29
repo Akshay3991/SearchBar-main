@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const SearchBar = ({ handleSearch, search, setSearch }) => {
-  
+const SearchBar = ({ searchQuery, setSearchQuery, handleSearch }) => {
+
   return (
     // <div className="gcse-search"></div>
 
@@ -9,13 +9,13 @@ const SearchBar = ({ handleSearch, search, setSearch }) => {
       <input
         className="w-[80%] p-2 rounded-lg"
         type="text"
-        value={search}
+        value={searchQuery}
         placeholder="Search..."
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <button
         className="bg-[blue] text-white p-2 rounded-lg"
-        onClick={() => handleSearch(search)}
+        onClick={() => handleSearch()}
       >
         Search
       </button>
@@ -25,8 +25,8 @@ const SearchBar = ({ handleSearch, search, setSearch }) => {
 
 SearchBar.propTypes = {
   handleSearch: PropTypes.func.isRequired,
-  search: PropTypes.string.isRequired,
-  setSearch: PropTypes.func.isRequired,
+  searchQuery: PropTypes.string.isRequired,
+  setSearchQuery: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

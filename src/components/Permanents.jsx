@@ -5,7 +5,6 @@ import { ApiListContext } from "../Store/api-list-store";
 
 function Permanents() {
   const { addYuData, addABdata, addAcData } = useContext(ApiListContext);
-  const [search, setSearch] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const apiKey = 'AIzaSyBhUVSglPuAa-XteurjJu1yqn2yG2i8Hcc'; //google api key
   const cseId = '421347851371144cf';   //google search engine id
@@ -19,13 +18,7 @@ function Permanents() {
     rating: false,
   });
 
-  const handleSearch = (value) => {
-    setSearchQuery(value);
-    fetchYdata();
-    fetchAbdata();
-    fetchApdata();
-    setSearch("");
-  };
+
 
   const handleCheckboxChange = (event) => {
     const { name, checked, value } = event.target;
@@ -102,15 +95,19 @@ function Permanents() {
         console.error("There was a problem with the fetch operation:", error);
       });
   };
-
-
+  const handleSearch = () => {
+    fetchYdata();
+    fetchAbdata();
+    fetchApdata();
+  };
+  setSearchQuery("");
   return (
     <div className="bg-[black] w-[100%] h-[100%]">
       <div className="flex p-10 justify-center items-center">
         <SearchBar
           handleSearch={handleSearch}
-          search={search}
-          setSearch={setSearch}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
         />
       </div>
       <div className="flex  border-t-4 border-white justify-center items-center">
