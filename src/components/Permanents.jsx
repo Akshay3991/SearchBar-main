@@ -76,7 +76,7 @@ function Permanents() {
   };
 
   const fetchApdata = async () => {
-    fetch(`http://localhost:3000/?query=${searchQuery}`)
+    fetch(`https://searchbar-server.onrender.com/?query=${searchQuery}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
