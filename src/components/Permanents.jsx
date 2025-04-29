@@ -20,8 +20,6 @@ function Permanents() {
   });
 
   const handleSearch = (value) => {
-
-    console.log(value)
     setSearchQuery(value);
     fetchYdata();
     fetchAbdata();
@@ -62,7 +60,7 @@ function Permanents() {
       .then((data) => {
         const rankedData = rankResults(data.items); // Assuming data.items contains the results
         addYuData(rankedData);
-        console.log(rankedData)
+
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
