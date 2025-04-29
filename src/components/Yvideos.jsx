@@ -11,7 +11,6 @@ const Yvideos = () => {
       setPageToken(YuData.nextPageToken);
     }
   }, [YuData]);
-  console.log(YuData)
   const fetchNextPage = async () => {
     try {
       const response = await fetch(
