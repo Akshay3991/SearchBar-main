@@ -7,8 +7,10 @@ function Permanents() {
   const { addYuData, addABdata, addAcData } = useContext(ApiListContext);
   const [search, setSearch] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; //google api key
-  const cseId = process.env.REACT_APP_GOOGLE_CSE_ID;   //google search engine id
+  const apiKey = 'AIzaSyBhUVSglPuAa-XteurjJu1yqn2yG2i8Hcc'; //google api key
+  const cseId = '421347851371144cf';   //google search engine id
+  // const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; //google api key
+  // const cseId = process.env.REACT_APP_GOOGLE_CSE_ID;   //google search engine id
 
   const [searchValue, setSearchValue] = useState("relevance");
   const [searchBy, setSearchBy] = useState({
@@ -36,7 +38,7 @@ function Permanents() {
       return bScore - aScore; // Descending order
     });
   };
-
+  // https://www.googleapis.com/youtube/v3/search?key=AIzaSyBhUVSglPuAa-XteurjJu1yqn2yG2i8Hcc&part=snippet&q=akshay&type=video&order=${searchValue}
   const fetchYdata = async () => {
     fetch(
       `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&part=snippet&q=${searchQuery}&type=video&order=${searchValue}`
@@ -55,7 +57,7 @@ function Permanents() {
         console.error("There was a problem with the fetch operation:", error);
       });
   };
-
+  // https://www.googleapis.com/customsearch/v1?key=AIzaSyBhUVSglPuAa-XteurjJu1yqn2yG2i8Hcc&cx=421347851371144cf&q=akshay
   const fetchAbdata = async () => {
     fetch(
       `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cseId}&q=${searchQuery}`
@@ -74,7 +76,7 @@ function Permanents() {
         console.error("There was a problem with the fetch operation:", error);
       });
   };
-
+  // https://searchbar-server.onrender.com/?query=akshay
   const fetchApdata = async () => {
     fetch(`https://searchbar-server.onrender.com/?query=${searchQuery}`)
       .then((response) => {
