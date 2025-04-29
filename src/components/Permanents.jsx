@@ -19,6 +19,16 @@ function Permanents() {
     rating: false,
   });
 
+  const handleSearch = (value) => {
+
+    console.log(value)
+    setSearchQuery(value);
+    fetchYdata();
+    fetchAbdata();
+    fetchApdata();
+    setSearch("");
+  };
+
   const handleCheckboxChange = (event) => {
     const { name, checked, value } = event.target;
     setSearchBy((prevState) => ({
@@ -52,6 +62,7 @@ function Permanents() {
       .then((data) => {
         const rankedData = rankResults(data.items); // Assuming data.items contains the results
         addYuData(rankedData);
+        console.log(rankedData)
       })
       .catch((error) => {
         console.error("There was a problem with the fetch operation:", error);
@@ -94,15 +105,7 @@ function Permanents() {
       });
   };
 
-  const handleSearch = (value) => {
 
-    console.log(value)
-    setSearchQuery(value);
-    fetchYdata();
-    fetchAbdata();
-    fetchApdata();
-    setSearch("");
-  };
   return (
     <div className="bg-[black] w-[100%] h-[100%]">
       <div className="flex p-10 justify-center items-center">

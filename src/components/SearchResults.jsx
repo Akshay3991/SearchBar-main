@@ -20,16 +20,16 @@ const SearchResults = ({
         </Link>
       </div>
       <div className="flex font-black justify-evenly w-[80%]">
-        <Link to="/videos" onClick={() => fetchYdata()}>
+        <Link to="/videos" >
           Videos
         </Link>
-        <Link to="/articles" onClick={() => fetchAbdata()}>
+        <Link to="/articles" >
           Articles
         </Link>
-        <Link to="/blogposts" onClick={() => fetchAbdata()}>
+        <Link to="/blogposts" >
           Blog Posts
         </Link>
-        <Link to="/academicpapers" onClick={() => fetchApdata()}>
+        <Link to="/academicpapers" >
           Academic Papers
         </Link>
       </div>
