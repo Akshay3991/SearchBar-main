@@ -3,6 +3,7 @@ import { ApiListContext } from "../Store/api-list-store";
 
 const Articles = () => {
   const { AbData } = useContext(ApiListContext);
+  console.log(AbData)
   return (
     <div className="container mx-auto px-4 py-8">
       {AbData && AbData.items ? (

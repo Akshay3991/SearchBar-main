@@ -26,7 +26,7 @@ const Yvideos = () => {
       console.error("Error fetching next page:", error);
     }
   };
-
+  console.log(YuData)
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-white">YouTube Videos</h1>

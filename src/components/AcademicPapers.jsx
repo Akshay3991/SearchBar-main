@@ -15,7 +15,7 @@ const AcademicPapers = () => {
     related_questions,
     related_searches,
   } = ApData;
-
+  console.log(ApData)
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6">Search Results</h1>
