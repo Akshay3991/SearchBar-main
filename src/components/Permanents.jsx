@@ -95,6 +95,8 @@ function Permanents() {
   };
 
   const handleSearch = (value) => {
+
+    console.log(value)
     setSearchQuery(value);
     fetchYdata();
     fetchAbdata();

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 const SearchBar = ({ handleSearch, search, setSearch }) => {
+  
   return (
     // <div className="gcse-search"></div>
 
