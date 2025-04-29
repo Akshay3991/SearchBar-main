@@ -99,8 +99,9 @@ function Permanents() {
     fetchYdata();
     fetchAbdata();
     fetchApdata();
+    setSearchQuery("");
   };
-  setSearchQuery("");
+
   return (
     <div className="bg-[black] w-[100%] h-[100%]">
       <div className="flex p-10 justify-center items-center">
